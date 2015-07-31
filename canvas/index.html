@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas</title>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+<body>
+	<canvas id="canvas" style="border:1px solid #ccc; display: block;" >
+		
+	</canvas>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			var canvas = document.getElementById("canvas");
+
+				// 正真用到Canvas的地方
+			// 定义大小
+			canvas.width = 1024;
+			canvas.height = 600;
+
+            var context = canvas.getContext("2d");
+
+//           指定路径
+            context.beginPath();  // 开始
+
+			context.moveTo(100,100);
+			context.lineTo(400,400);
+            context.lineTo(100,400);
+            context.lineTo(100,100);
+
+            context.closePath();  // 结束
+
+            context.lineWidth = 5;
+            context.strokeStyle = "red";
+            context.stroke();
+
+//          填充色
+//            context.fillStyle = "rgb(2,100,30)";
+//            context.fill();
+            context.beginPath();  // 开始
+            context.moveTo(200, 100);
+            context.lineTo(400, 300);
+            context.closePath();  // 结束
+            context.strokeStyle = "black";
+            context.stroke();
+
+		}
+	</script>
+</body>
+</html>
